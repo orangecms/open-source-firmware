@@ -1,0 +1,21 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Maslowski <info@orangecms.org>"
+  ],
+  "description": "presentation slides built with Remark.js",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "remark": "^0.13.0"
+  }
+}
