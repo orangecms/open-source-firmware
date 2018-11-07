@@ -11,11 +11,11 @@
   ],
   "author": "Daniel Maslowski",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^2.3.1",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "natives": "^1.1.6"
   }
 }
