@@ -112,9 +112,13 @@ class: center, middle
 
 ### Screwdrivers
 
+![Screwdrivers](img/screwdrivers.jpg)
+
 ---
 
 ### Magnifying lens
+
+![Magnifying lens](img/magnifying-lens.jpg)
 
 ---
 
