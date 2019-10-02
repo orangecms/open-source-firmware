@@ -1,0 +1,1 @@
+In diesem Vortrag werden verschiedene aktuelle Open Source Firmware Projekte sowie deren Motivationen und Anwendungsbereiche vorgestellt. Zustzlich zu einem Ausblick auf weitere Entwicklungen gibt es einen Bericht von der zweiten Open Source Firmware Conference (OSFC).
