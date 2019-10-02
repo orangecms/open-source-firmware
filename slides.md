@@ -22,6 +22,10 @@ title: Introducing Open Source Firmware
 - security by obscurity
 - hiding quality issues
 
+### Dexter's Law
+
+> Only proprietary software vendors want proprietary software.
+
 # Projects
 
 # Future Work
