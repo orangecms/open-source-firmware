@@ -1,4 +1,6 @@
-all:
+all: 43 169
+
+43:
 	pandoc \
 		-t beamer \
 		--pdf-engine=xelatex \
