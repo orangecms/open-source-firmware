@@ -108,6 +108,7 @@ $if(beamerarticle)$
 $endif$
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+\usepackage{fontspec}
 $else$
 \usepackage{lmodern}
 $endif$

@@ -3,7 +3,7 @@ author: Daniel Maslowski
 title: Introducing Open Source Firmware
 ---
 
-# Warning: Politics involved
+# Warning: Politics involved \fontspec{Twitter Color Emoji}⚠️
 
 ## Agenda
 
@@ -58,7 +58,7 @@ title: Introducing Open Source Firmware
 
 ## Motivations to keep code proprietary
 
-![NDA required](img/nda-required.png)
+![NDA required](img/nda-required.png){ height=60% }
 
 - intellectual property
 - security by obscurity
@@ -139,7 +139,7 @@ source: [Phoenix](https://uefi.org/sites/default/files/resources/UEFI%20Firmware
   * Intel: FSP (Firmware Support Package)
   * AMD: AGESA (AMD Generic Encapsulated Software Architecture)
 
-# Let's see a demo! 💻
+# Let's see a demo! \fontspec{Twitter Color Emoji}💻
 
 ## [LinuxBoot](https://www.linuxboot.org/)
 
@@ -253,6 +253,6 @@ source: [Phoenix](https://uefi.org/sites/default/files/resources/UEFI%20Firmware
 [https://uefi.org/node/4004](https://uefi.org/node/4004)
 
 
-# Questions?
+# Questions? \fontspec{Twitter Color Emoji}🤔
 
-# Thanks! :)
+# Thanks! \fontspec{Twitter Color Emoji}🐢
