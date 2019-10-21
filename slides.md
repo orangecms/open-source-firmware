@@ -116,9 +116,9 @@ source: [Phoenix](https://uefi.org/sites/default/files/resources/UEFI%20Firmware
 * reference implementation from Intel + community
 * [EDK II/UDK](https://github.com/tianocore/tianocore.github.io/wiki/UDK) (EFI Development Kit II aka UEFI Development Kit)
 * used by Independent BIOS Vendors (IBVs)
-  * AMI: Aptio
-  * Phoenix: SCT (SecureCore Technology™)
-  * Insyde: H2O
+  * AMI: [Aptio](https://ami.com/en/products/bios-uefi-firmware/aptio-v/)
+  * Phoenix: [SCT (SecureCore Technology™)](https://www.phoenix.com/products/index.html)
+  * Insyde: [InsydeH2O®](https://www.insyde.com/products)
 * OVMF (Open Virtual Machine Firmware)
   * made for QEMU
   * debuggable through GDB using a bridge
