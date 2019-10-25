@@ -405,7 +405,7 @@ $if(titlegraphic)$
 \titlegraphic{\includegraphics{$titlegraphic$}}
 $endif$
 $if(logo)$
-\logo{\includegraphics[height=1.5cm]{$logo$}}
+\logo{\includegraphics[height=1.2cm]{$logo$}}
 $endif$
 $endif$
 
