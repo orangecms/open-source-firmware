@@ -230,7 +230,7 @@ source: [Phoenix](https://uefi.org/sites/default/files/resources/UEFI%20Firmware
 - implemented in Rust
 - policy: no proprietary blobs, *absolutely*
 - first targets
-    * RISC ([HiFive Unleashed](https://github.com/oreboot/oreboot/blob/master/Documentation/sifive/setup.md))
+    * RISC-V ([HiFive Unleashed](https://github.com/oreboot/oreboot/blob/master/Documentation/sifive/setup.md))
     * QEMU (ARM)
 
 ![oreboot](img/oreboot-logo.png){ width=20% }
