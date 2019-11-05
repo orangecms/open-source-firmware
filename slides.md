@@ -37,10 +37,25 @@ subtitle: Let Linux do it
 ![UEFI and coreboot flows](img/comparision_coreboot_uefi.svg)
 
 ### basic [platform initialization](https://www.cs.cmu.edu/~410/doc/minimal_boot.pdf): CPU, chipset, RAM (PEI / romstage)
+- has to be rerun [similarly for S3 resume](https://reverse.put.as/2015/07/01/reversing-prince-harmings-kiss-of-death/)
 
 # LinuxBoot Concept
 
-## Kernel + initramfs
+## LinuxBoot
+
+- Linux kernel + initramfs in SPI flash
+- can run on top of
+  * coreboot: as payload
+  * U-Boot
+  * vendor UEFI firmware: remove DXEs, build Linux with EFI support
+
+\(=>\) approach rather than implementation
+
+## Integrations
+
+![LinuxBoot integrations](img/linuxboot-integrations.png)
+
+## Constraints
 
 - only few megabytes of space (8 to 16 common)
 - build minimum kernel
@@ -53,16 +68,53 @@ subtitle: Let Linux do it
 
 \(=>\) very similar to OpenWrt, except for bootloader instead of routing tools
 
-## Integrations
-
-![LinuxBoot integrations](img/linuxboot-integrations.png)
-
 # UEFI Integration
 
+## [UEFI binary format](https://wiki.osdev.org/UEFI#Binary_Format)
 
-## UEFI binary types
+PE32 / PE32+ format, without symbol tables
+
+Three types:
+
+- applications
+  * OS loaders
+  * utilities
+- boot service drivers
+  * disk drivers
+  * network drivers
+- runtime drivers
+  * may remain loaded while OS is running
+
+\(=>\) replace applications and boot service drivers with LinuxBoot
 
 # Implementations
+
+## [u-root](https://u-root.tk/)
+
+- initramfs tool written in Go
+- utilities like busybox (`ls`, `cat`, ...)
+- offers bootloaders (SystemBoot)
+
+## Try out u-root in QEMU
+
+```sh
+go get github.com/u-root/u-root
+# build an initramfs
+~/go/bin/u-root -build=bb -o /tmp/initramfs.linux_amd64.cpio
+# get a kernel
+MIRROR="http://mirror.rackspace.com" REL="2019.10.01" \
+  wget "$MIRROR/archlinux/iso/$REL/arch/boot/x86_64/vmlinuz"
+# run it :)
+qemu-system-x86_64 -kernel vmlinuz \
+  -initrd /tmp/initramfs.linux_amd64.cpio
+```
+
+## u-root demo
+
+![u-root in QEMU](img/u-root_qemu.png)
+
+## Heads
+  * [authenticated / measured boot](https://trmm.net/Heads_threat_model)
 
 # Future Work
 
