@@ -16,8 +16,8 @@ subtitle: Let Linux do it
 
 ## Firmware now vs back then
 
-- 1999: birth of coreboot
-  * open source firmware \\o/
+- 1999: birth of coreboot as LinuxBIOS
+  * open source x86 firmware \\o/
 - 2004: Tiano initial release by Intel
   * now EDK I/II, maintained by UEFI community
 - 2014: Intel Haswell release
@@ -42,6 +42,8 @@ subtitle: Let Linux do it
 # LinuxBoot Concept
 
 ## LinuxBoot
+
+![LinuxBoot logo](img/linuxboot.png){ height=25% }
 
 - Linux kernel + initramfs in SPI flash
 - can run on top of
@@ -72,7 +74,7 @@ subtitle: Let Linux do it
 
 ## [UEFI binary format](https://wiki.osdev.org/UEFI#Binary_Format)
 
-PE32 / PE32+ format, without symbol tables
+[PE32 / PE32+ format](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format), without symbol tables
 
 Three types:
 
@@ -90,6 +92,8 @@ Three types:
 # Implementations
 
 ## [u-root](https://u-root.tk/)
+
+![u-root logo](img/u-root_logo.png){ height=25% }
 
 - initramfs tool written in Go
 - utilities like busybox (`ls`, `cat`, ...)
@@ -115,6 +119,29 @@ qemu-system-x86_64 -kernel vmlinuz \
 
 ## Heads
   * [authenticated / measured boot](https://trmm.net/Heads_threat_model)
+
+## u-bmc
+
+- u-root for BMCs
+- alternative to OpenBMC
+
++---------------+------------------------+--------------------+
+| Project       | OpenBMC                | u-bmc              |
++===============+========================+====================+
+| Languages     | C++, Python            | Go                 |
++---------------+------------------------+--------------------+
+| Tooling       | Yocto, OpenEmbedded    | u-root             |
++---------------+------------------------+--------------------+
+| Kernel        | OpenBMC Linux fork     | OpenBMC Linux fork |
++---------------+------------------------+--------------------+
+| Init          | systemd                |                    |
++---------------+------------------------+--------------------+
+| IPC           | D-Bus                  |                    |
++---------------+------------------------+--------------------+
+| RPC           | IPMI, REST             | gRPC               |
++---------------+------------------------+--------------------+
+| Metrics       |                        | OpenMetrics        |
++---------------+------------------------+--------------------+
 
 # Future Work
 
