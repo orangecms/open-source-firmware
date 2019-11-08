@@ -26,6 +26,7 @@ subtitle: Let Linux do it
 - 2014: AMD Generic Encapsulated Software Architecture (AGESA) lockdown
   * [binary only since then](https://mail.coreboot.org/pipermail/coreboot/2014-November/078892.html)
   * was initially open sourced for coreboot in early 2011
+  * an [open laptop](http://openlunchbox.com/open-laptop/) would have been nice
 - 2019: [UDF (UEFI Dumpster Fire™)](https://twitter.com/xjamesmorris/status/1179825267939786752)
   * [criticized by many people](https://altelectron.org.uk/notice/9hJJFGA7fbQAAcQJWa)
   * [for many years](http://allsoftwaresucks.blogspot.com/2013/04/uefi-and-arm.html)
@@ -104,7 +105,8 @@ Three types:
 ```sh
 go get github.com/u-root/u-root
 # build an initramfs
-~/go/bin/u-root -build=bb -o /tmp/initramfs.linux_amd64.cpio
+GOOS=linux \
+  ~/go/bin/u-root -build=bb -o /tmp/initramfs.linux_amd64.cpio
 # get a kernel
 MIRROR="http://mirror.rackspace.com" REL="2019.10.01" \
   wget "$MIRROR/archlinux/iso/$REL/arch/boot/x86_64/vmlinuz"
