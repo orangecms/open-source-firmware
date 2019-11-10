@@ -33,6 +33,23 @@ subtitle: Let Linux do it
 
 ### neglected: Intel ME, AMD PSP, ARM and other SoCs
 
+## State of security
+
+![Matrosov on firmware security](img/matrosov-firmware-security.jpg){ width=80% }
+
+- update processes are often insecure
+- vendors and firmware projects take no responsibility
+- great summary by [Alex Matrosov](https://www.youtube.com/watch?v=gsp1cCR7oOY)
+
+## Right to repair bill
+
+![Right to repair bill](img/right-to-repair.png){ width=80% }
+
+- [vendors still propose security by obscurity](https://www.youtube.com/watch?v=W47nB65zcmk)
+  * although known to be pointless against sophisticated attackers
+- repair technicians suffer from propretiary information
+  * consumers and researchers alike
+
 ## Platform Initialization (PI)
 
 ![UEFI and coreboot flows](img/comparision_coreboot_uefi.svg)
@@ -90,6 +107,14 @@ Three types:
 
 \(=>\) replace applications and boot service drivers with LinuxBoot
 
+## Tools
+
+- [Fiano](https://github.com/linuxboot/fiano)
+  * utk with [DXE cleaner](https://github.com/linuxboot/fiano#dxe-cleaner)
+- [UEFITool](https://github.com/LongSoft/UEFITool)
+
+![UEFITool](img/uefitool.png){ width=80% }
+
 # Implementations
 
 ## [u-root](https://u-root.tk/)
@@ -122,6 +147,8 @@ qemu-system-x86_64 -kernel vmlinuz \
 ## Heads
   * [authenticated / measured boot](https://trmm.net/Heads_threat_model)
 
+![Heads TPM TOTP](img/heads-tpmtotp.jpg){ width=70% }
+
 ## u-bmc
 
 - u-root for BMCs
@@ -145,6 +172,30 @@ qemu-system-x86_64 -kernel vmlinuz \
 | Metrics       |                        | OpenMetrics        |
 +---------------+------------------------+--------------------+
 
+
 # Future Work
 
-##
+## CHIPSEC blacklist in MFT
+
+- UEFI Forum openly discussed security measures for firmware development and
+  [answered questions from participants](https://uefi.org/node/4020)
+
+  > Q: Can consumers audit the firmware? If so, how?
+  >
+  > A: There are a variety of tools that can allow a consumer to inspect firmware images. CHIPSEC and UEFI Tool are two tools that can analyze a firmware image and allow a consumer to inspect its contents.  CHIPSEC has a blacklist of UEFI modules which include a tool that will check a ROM image for blacklisted modules.
+
+- Mimoja released the MimojaFirmwareToolkit (MFT) [https://firmware.doctor](https://firmware.doctor)
+  * integrate CHIPSEC blacklist in analysis?
+  * [contributions](https://firmware.doctor/contribute) are welcome ;)
+
+## ACME for firmware update PKI
+
+Since firmware updates are such an issue:
+
+- we had a very similar issue on the web with secure communication
+- leverage the ACME protocol (Let's Encrypt) also for firmware?
+- create issues on [TianoCore GitHub org](https://github.com/tianocore/) for discussion
+
+# Questions?
+
+# Thanks! :)
